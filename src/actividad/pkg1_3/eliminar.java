@@ -49,17 +49,23 @@ public class eliminar {
               {                   
                                           
                   file.seek(posicion);   
-                System.out.println(posicion);
+                
                   file.writeInt(-1);
                   posicion=posicion+4;
-                  file.writeChars(Integer.toString(id));
+                 
+                  StringBuffer buffer=null; 
+                 
+                  buffer =new StringBuffer(Integer.toString(id));
+                  buffer.setLength(10);
+                  
+                  file.writeChars(buffer.toString());
                    posicion=posicion+20;
                     file.seek(posicion);
-                   System.out.println(posicion);
-                  file.writeInt(0);
+                
+                    file.writeInt(0);
                   posicion=posicion+4;
                     file.seek(posicion);
-                     System.out.println(posicion);
+                  
                   file.writeDouble(0);
                   
 
